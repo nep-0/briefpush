@@ -1,0 +1,42 @@
+{
+  "base_url": "http://localhost:8080",
+  "api_key": "your_api_key_here",
+  "model": "gpt-3.5-turbo",
+  "json_file_path": "feeds.json",
+  "report_hour": 8,
+  "feeds": [
+    {
+      "key": "example_feed",
+      "name": "Example Feed",
+      "url": "https://example.com/rss"
+    }
+  ],
+  "notification": {
+    "providers": [
+      {
+        "type": "email",
+        "enabled": true,
+        "email": {
+          "from": "bot@example.com",
+          "to": [
+            "you@example.com"
+          ],
+          "smtp": {
+            "host": "smtp.example.com",
+            "port": 587,
+            "username": "smtp-username",
+            "password": "smtp-password",
+            "use_tls": true
+          }
+        }
+      },
+      {
+        "type": "feishu",
+        "enabled": false,
+        "feishu": {
+          "webhook_url": ""
+        }
+      }
+    ]
+  }
+}
